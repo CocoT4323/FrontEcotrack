@@ -1,36 +1,35 @@
 <div class="header">
-    <mat-icon id="back" routerLink="/">arrow_back_ios</mat-icon>
+  <mat-icon id="back" routerLink="/">arrow_back_ios</mat-icon>
+</div>
+
+<div class="section">
+  <div class="content-right">
+    <h1>EcoTrack</h1>
+    <p>Bienvenido de nuevo!</p>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Usuario</mat-label>
+      <input matInput placeholder="Username" [(ngModel)]="username" />
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input type="password" [(ngModel)]="password" placeholder="Password" matInput [type]="hide() ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="clickEvent($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+      >
+        <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <section>
+      <button id="buton-login" (click)="login()" mat-button type="submit">Ingresar</button>
+    </section>
   </div>
-  
-  <div class="section" id="intro">
-    <div class="content-right">
-      <h1>EcoTrack</h1>
-      <p>Bienvenido de nuevo!</p>
-  
-      <mat-form-field class="example-full-width">
-        <mat-label>Usuario</mat-label>
-        <input matInput placeholder="Username" [(ngModel)]="username" />
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Contraseña</mat-label>
-        <input type="password" [(ngModel)]="password" placeholder="Password" matInput [type]="hide() ? 'password' : 'text'" />
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="clickEvent($event)"
-          [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide()"
-        >
-          <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-      </mat-form-field>
-  
-      <section>
-        <button id="buton-login" (click)="login()" mat-button type="submit">Ingresar</button>
-      </section>
-    </div>
-  </div>
-  
-  <router-outlet></router-outlet>
-  
+</div>
+
+<router-outlet></router-outlet>

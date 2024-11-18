@@ -41,13 +41,13 @@ export class UsuariosService {
     return this.http.put(this.url,us);
   }
   login(husername: string, hpassword: string): Observable<any> {
-    return this.http.post('http://localhost:8080/usuarios/login', { husername, hpassword });
+    return this.http.post('https://ecotrack-u36k.onrender.com/usuarios/login', { husername, hpassword });
   }
   obtenerCantidad():Observable<QuejasPorUsuarioDTO[]>{
     return this.http.get<QuejasPorUsuarioDTO[]>(`${this.url}/quejasporusuario`)
   }
 
   obtenerIdPorUsername(username: string): Observable<number> {
-    return this.http.get<number>(`http://localhost:8080/usuarios/obtenerid?username=${username}`);
+    return this.http.get<number>(`https://ecotrack-u36k.onrender.com/usuarios/obtenerid?username=${username}`);
   }
 }
